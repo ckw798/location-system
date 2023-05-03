@@ -7,17 +7,37 @@ const type = ref<MapType>('BMAP_NORMAL_MAP')
 
 // 地图中心经纬度
 const center = ref({
-    lng: 116.28019,
-    lat: 40.049191,
+    lng: 116.977662,
+    lat: 36.6748
 })
 
 //车辆信息
-const cars = ref([{
-    location: { lng: 116.28019, lat: 40.049191 },
+const cars = ref([
+    {
+    location: { lng: 116.977662, lat: 36.6748 },
     size: { length: 4.8, width: 1.8 },
-    rotation: 60,
+    rotation: 30,
     carNO: '鲁A66666'
-}])
+},
+{
+    location: { lng: 116.978754, lat: 36.675517 },
+    size: { length: 4.8, width: 1.8 },
+    rotation: 30,
+    carNO: '鲁A88888'
+},
+{
+    location: { lng: 116.97689, lat: 36.674294 },
+    size: { length: 4.8, width: 1.8 },
+    rotation: 30,
+    carNO: '鲁A66888'
+},
+{
+    location: { lng: 116.977613,lat: 36.674771 },
+    size: { length: 4.8, width: 1.8 },
+    rotation: 30,
+    carNO: '鲁A66688'
+}
+])
 
 
 // 车辆大小的转化函数
@@ -59,7 +79,7 @@ const update_center = (new_center) => {
         <el-main>
             <!-- 百度地图容器 -->
             <BMap v-bind="$attrs" :heading="64.5" :tilt="73" :center="center" :zoom="21" :minZoom="3" :mapType="type"
-                enableScrollWheelZoom="true" enablePinchToZoom="true" mapSetting.enableTraffic="true">
+                enableScrollWheelZoom="true" enablePinchToZoom="true" mapSetting.enableTraffic="true" enableDragging="true">
                 <BScale anchor="BMAP_ANCHOR_TOP_RIGHT"></BScale> <!-- 比例尺控件 -->
                 <BZoom anchor="BMAP_ANCHOR_TOP_LEFT" /> <!-- 缩放控件 -->
                 <BNavigation3d /> <!-- 3D 视角导航控件 -->
