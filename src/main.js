@@ -9,7 +9,7 @@ const app = createApp(App)
 app.use(ElementPlus, { size: 'small', zIndex: 3000 })
 app.use(router)
 app.use(baiduMap,{
-    ak: '',
+    ak: 'RRLreuFSB4gwvQ6iCfLW1KaGpcM6UkTc',
   plugins: ['TrackAnimation']
 })
 app.mount('#app')
